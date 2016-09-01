@@ -12,6 +12,10 @@
 		71C05B711D77F1FC00CC915A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C05B6F1D77F1FC00CC915A /* Main.storyboard */; };
 		71C05B731D77F1FC00CC915A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C05B721D77F1FC00CC915A /* Assets.xcassets */; };
 		71C05B761D77F1FC00CC915A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C05B741D77F1FC00CC915A /* LaunchScreen.storyboard */; };
+		71C05B7F1D77F23D00CC915A /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C05B7D1D77F23D00CC915A /* FBSDKCoreKit.framework */; };
+		71C05B801D77F23D00CC915A /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C05B7E1D77F23D00CC915A /* FBSDKLoginKit.framework */; };
+		71C05B841D77F33700CC915A /* NSMutableArray+test.m in Sources */ = {isa = PBXBuildFile; fileRef = 71C05B831D77F33700CC915A /* NSMutableArray+test.m */; };
+		71C05B861D77F9D200CC915A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71C05B851D77F9D200CC915A /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,12 @@
 		71C05B721D77F1FC00CC915A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C05B751D77F1FC00CC915A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71C05B771D77F1FC00CC915A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C05B7D1D77F23D00CC915A /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		71C05B7E1D77F23D00CC915A /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		71C05B811D77F33600CC915A /* MADLoginDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MADLoginDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		71C05B821D77F33700CC915A /* NSMutableArray+test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+test.h"; sourceTree = "<group>"; };
+		71C05B831D77F33700CC915A /* NSMutableArray+test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+test.m"; sourceTree = "<group>"; };
+		71C05B851D77F9D200CC915A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C05B861D77F9D200CC915A /* Bolts.framework in Frameworks */,
+				71C05B801D77F23D00CC915A /* FBSDKLoginKit.framework in Frameworks */,
+				71C05B7F1D77F23D00CC915A /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +73,12 @@
 				71C05B721D77F1FC00CC915A /* Assets.xcassets */,
 				71C05B741D77F1FC00CC915A /* LaunchScreen.storyboard */,
 				71C05B771D77F1FC00CC915A /* Info.plist */,
+				71C05B7D1D77F23D00CC915A /* FBSDKCoreKit.framework */,
+				71C05B7E1D77F23D00CC915A /* FBSDKLoginKit.framework */,
+				71C05B851D77F9D200CC915A /* Bolts.framework */,
+				71C05B821D77F33700CC915A /* NSMutableArray+test.h */,
+				71C05B831D77F33700CC915A /* NSMutableArray+test.m */,
+				71C05B811D77F33600CC915A /* MADLoginDemo-Bridging-Header.h */,
 			);
 			path = MADLoginDemo;
 			sourceTree = "<group>";
@@ -137,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C05B6E1D77F1FC00CC915A /* ViewController.swift in Sources */,
+				71C05B841D77F33700CC915A /* NSMutableArray+test.m in Sources */,
 				71C05B6C1D77F1FC00CC915A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,10 +270,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MADLoginDemo",
+				);
 				INFOPLIST_FILE = MADLoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.MADLoginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MADLoginDemo/MADLoginDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -261,10 +288,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MADLoginDemo",
+				);
 				INFOPLIST_FILE = MADLoginDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.makeschool.MADLoginDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MADLoginDemo/MADLoginDemo-Bridging-Header.h";
 			};
 			name = Release;
 		};
